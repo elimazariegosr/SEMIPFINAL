@@ -1,0 +1,69 @@
+<br><h3 style="color: lightyellow;">Solicitudes pendientes</h3><br>
+<table class="table table-dark">
+    <thead>
+      <tr align="center">
+        <th scope="col">Usuario</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Accion</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let ft of solicitudes">
+      <tr  align="center" *ngIf="ft.estado == 'Revicion'" >
+        
+        <td>
+            {{ft.cliente}}
+        </td>
+        <td>
+            {{ft.nombre}}
+        </td>
+        
+        <td>
+            {{ft.descripcion}}
+        </td>
+        <td>
+            {{ft.oficio}}
+        </td>
+        
+        <td><button (click)="rechazar(ft)" class="btn btn-danger">Rechazar</button></td> 
+        <td><button (click)="aceptar(ft)" class="btn btn-warning">Aceptar</button></td> 
+    
+    </tr>
+    </tbody>
+  </table>
+  <br><h3 style="color: lightyellow;">Servicios</h3><br>
+  <table class="table table-dark">
+    <thead>
+      <tr align="center">
+        <th scope="col">Usuario</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody  *ngFor="let ft of solicitudes">
+      <tr  align="center" >
+        
+        <td>
+            {{ft.cliente}}
+        </td>
+        <td>
+            {{ft.nombre}}
+        </td>
+        
+        <td>
+            {{ft.descripcion}}
+        </td>
+        <td>
+            {{ft.oficio}}
+        </td>
+        <td>
+          {{ft.estado}}
+      </td>
+      
+    </tr>
+    </tbody>
+  </table>

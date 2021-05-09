@@ -1,0 +1,43 @@
+<div class="modal-dialog modal-lg ">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="modal-title" id="nombre">Crear Perfil</h3>
+    </div>
+        <table  style="text-align:center;">
+        <tr>
+            <td>
+              <div class="container">
+                
+              </div>
+              <div class="wrappers" >
+                <div class="wrapper fadeInDown">
+                    <div id="formContent">
+                      <div id="div_imagen">
+                        <img src="{{foto_perfil}}" #imagen id="imagen" alt="User Icon"  width="300" height="300" />
+                      </div>
+                      
+                    </div>
+                </div>
+              </div> 
+                    
+            </td>
+            <td>
+              <input type="text" #nombre id="nombre" class="fadeIn second"  placeholder="Nombre">
+              <input type="text" #apellido id="apellido" class="fadeIn second"  placeholder="Apellido">
+              <input type="text" #email id="email" class="fadeIn second"  placeholder="Email">
+              <input type="number" #dpi id="dpi" class="fadeIn second"  placeholder="Dpi">
+              <input type="password" #pass id="pass" class="fadeIn second"  placeholder="Passowrd">
+              
+            </td>
+        </tr>  
+        <tr>
+          <td>
+            <input type="button" value="Agregar Imagen" (click) = "agregar_imagen()"> 
+          </td>
+          <td>
+            <input type="submit" class="fadeIn fourth" (click) = "registrar(nombre.value, apellido.value, email.value, dpi.value, pass.value)" value="Crear">
+          </td>
+        </tr>
+      </table>    
+  </div>
+</div>

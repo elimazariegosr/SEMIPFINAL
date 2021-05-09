@@ -1,0 +1,120 @@
+<div class="container">
+  <div class="column">
+      <div class="col-sm">
+        <table class="table">
+          <tr align="center">
+            <td>
+              <select multiple class="form-control" id="chat">
+              </select>  
+              
+            </td>
+          </tr>
+          <tr align="center">
+            <td>
+              <input type="text" placeholder="" placeholder="Send menssage" #mensaje id="mensaje" value="">
+              <input type="button" value="Enviar" (click) = "enviar_msg(mensaje.value)" >    
+            </td>
+          </tr>
+          </table>    
+      
+      </div>
+      <div id="div_oficio" style="display: none;" class="col-sm">
+          <div  class="fadeIn second">
+            <div class="overflow-auto">
+                <table  class="table table-striped table-dark">
+                    <thead class="thead-dark" >
+                        <tr align="center">
+                            <td>Nombre</td>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <tr align="center" *ngFor="let oficio of oficios">
+                            <td>{{oficio.nombre}}</td>
+                        </tr>
+                    </tbody>
+                  </table>
+              <!-- Remind Passowrd -->
+            </div>
+          </div>
+      </div>
+      <div id="div_servicios" style="display: none;" class="col-sm">
+        <app-ver-servicios></app-ver-servicios>
+      </div>
+      <div id="div_agregados" style="display: none;" class="col-sm">
+        <h3 style="color: lightyellow;">Servicios Agregados</h3>
+        <table class="table table-dark">
+          <thead>
+            <tr align="center">
+              <th scope="col">Servicio</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Categoria</th>
+              <th scope="col">Estado</th>
+            </tr>
+          </thead>
+          <tbody  *ngFor="let ft of servicios">
+            <tr  align="center" *ngIf="sesion.idUsuario == ft.fkCliente">
+              
+              <td>
+                  {{ft.nombre}}
+              </td>
+              
+              <td>
+                  {{ft.descripcion}}
+              </td>
+              <td>
+                  {{ft.oficio}}
+              </td>
+              <td>
+                {{ft.estado}}
+            </td>
+            
+          </tr>
+          </tbody>
+        </table>
+      </div>  
+      <div id="div_adquiridos" style="display: none;" class="col-sm">
+        <h3 style="color: lightyellow;">Servicios Adquiridos</h3>
+                                
+        <table class="table table-dark">
+            <thead>
+              <tr align="center">
+                <th scope="col">Servicio</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Estado</th>
+              </tr>
+            </thead>
+            <tbody  *ngFor="let ft of servicios">
+              <tr  align="center" *ngIf="sesion.idUsuario == ft.fkEmpleado && ft.estado == 'Aceptado'">
+                
+                <td>
+                    {{ft.nombre}}
+                </td>
+                
+                <td>
+                    {{ft.descripcion}}
+                </td>
+                <td>
+                    {{ft.oficio}}
+                </td>
+                <td>
+                  {{ft.estado}}
+              </td>
+              
+            </tr>
+            </tbody>
+          </table>
+      </div>  
+      <div id="div_info" style="display: none;" class="col-sm">
+        <h1 style="color: blanchedalmond;">AT JOB</h1>
+        <h3 style="color: blanchedalmond;">Descripcion General</h3>
+        <p style="color: blanchedalmond; text-align: justify;">Guatemala cuenta con una gran variedad de trabajos informales, por medio de este servicio web que tendra inicialmente servicios domesticos, los usuarios/clientes puedran solicitar dichos servicios, tomando en cuenta las facilidades de encontrar el servicio a solicitar por medio de las descripciones mencionadas por los usuarios que los brindan.</p>
+        <h3 style="color: blanchedalmond;">Modulos</h3>
+        <p style="color: blanchedalmond; text-align: justify;">La aplicacion cuenta con diferentes modulos, donde van a existir 3 tipos de usuarios, los clientes, los empleados y el ususario administrador.</p>
+        <p style="color: blanchedalmond; text-align: justify;">Los usuarios pueden ser capaces de agregar, visualizar y adquirir los diferentes tipos de servicios que esten en el sistema.</p>
+        <p style="color: blanchedalmond; text-align: justify;">El usuario administrador es el encargado de aceptar las solicitudes de servicios y la gestion de oficios(clasificacion de servicio)</p>
+          
+      </div>
+    </div>
+</div>

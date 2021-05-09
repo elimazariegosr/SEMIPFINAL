@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" *ngIf="sesion != null" [routerLink]="['Users']">Home</a>
+    <a class="navbar-brand" *ngIf="admin != null" [routerLink]="['Users/Admin']">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse "  id="navbarNav" >
+               
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="sesion != null" [routerLink]="['Users/Servicios']">Servicios</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="sesion != null" [routerLink]="['Users/Solicitudes/Crear']">Crear Servicio</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="sesion != null" [routerLink]="['Users']">Perfil</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="sesion != null" [routerLink]="['Chatbot']">Chat Bot</a>
+        </li>
+       </ul>
+      <ul class="navbar-nav me-rg mb-2 mb-lg-0">
+        
+      <li class="nav-item active">
+          <a class="nav-link " [routerLink]="['Users/Login']" *ngIf="sesion == null && admin == null"> Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['Users/Registrar']" *ngIf="sesion == null && admin == null">Registrar</a>
+        </li>
+        <li class="nav-item" >
+          <a class="nav-link"[routerLink]="['Users/Fotos']" (click) ="salir()" *ngIf="sesion != null ||  admin != null">Cerrar sesion</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <router-outlet ></router-outlet>
+<script></script>

@@ -1,0 +1,86 @@
+<div id="servicios">
+    <table>
+        <tr  scope="row">
+            <td WIDTH="50" >
+                <h1 style="visibility: hidden">Album</h1>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            
+                            <h1 style="color: lightyellow;">Servicios</h1>
+                            <input  type="text" style="max-height: 40px; width: 400px;" id="search" #search placeholder="Search"(keypress)=buscar(search.value)>
+                        </td>
+                        
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr  scope="row">
+            <td><h1 style="visibility: hidden">Album </h1></td>
+            <td>
+                <div class="wrappers" *ngFor="let ser of servicios;">
+                    <div class="wrapper fadeInDown">
+                        <div id="formContent">
+                            <a (click) = "adquirir(ser)"> 
+                                <img src="{{ser.foto}}" class="fadeIn second">
+                            </a>
+                        </div>
+                        <p style="color: lightyellow;">{{ser.nombre}}</p>
+                    </div>
+                </div>
+         
+            </td>
+        </tr>
+    </table>
+    
+    <hr style="border:20px;">   
+</div>
+<div id="servicio" class="container" style="display: none;">
+    <div class="column">
+        <div class="col-sm">
+
+                        <h3 style="color: lightyellow;">{{servicio.nombre}}</h3>
+                        <div >
+                            <div class="wrappe">
+                                <div class="wrapper fadeInDown">
+                                    <div id="formContent">
+                                        <img src="{{servicio.foto}}" class="fadeIn second" >
+                                    </div>
+                                
+            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <div class="wrappe" >
+                                <div class="wrapper fadeInDown">
+                                    <div id="formContent" >
+                                        <form>
+                                            <h1>Informacion</h1> 
+                                                <input type="text" style="max-height: 40px;"  class="fadeIn second" disabled   placeholder="{{servicio.descripcion}}">
+                                                <input type="text" style="max-height: 40px;"  class="fadeIn third" disabled  placeholder="{{servicio.cliente}}">
+                                                <input type="text" style="max-height: 40px;"  class="fadeIn third" disabled  placeholder="{{servicio.oficio}}">
+                                                <br>
+                                        </form>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm">
+                            <br>
+                            <div class="wrapper fadeInDown">
+                                    <div id="formContent">
+                                            <h1>Adquirir</h1>
+                                            <h2 *ngIf="sesion.idUsuario == servicio.fkCliente">No puede adquirir el servicio seleccionado</h2>
+                                            <input type="submit" *ngIf="sesion.idUsuario != servicio.fkCliente" (click) = "comprar()" class="fadeIn fourth" value="Adquirir Servicio">
+                                            <input type="submit"  (click) = "regresar()" class="fadeIn fourth" value="Regresar">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+    
+</div>

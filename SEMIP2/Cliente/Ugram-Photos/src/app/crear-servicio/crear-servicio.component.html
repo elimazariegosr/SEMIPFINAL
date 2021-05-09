@@ -1,0 +1,46 @@
+<div class="modal-dialog modal-lg">
+    <div class="modal-content dark">
+      <div class="modal-header">
+        <h3 class="modal-title" id="nombre">Solicitud de Servicio</h3>
+              
+      </div>
+          <table  style="text-align:center;">
+          <tr>
+            <td>
+              <div class="container">
+                
+              </div>
+              <div class="wrappers" >
+                <div class="wrapper fadeInDown">
+                    <div id="formContent">
+                      <div id="div_imagen">
+                        <img src="{{foto_perfil}}" #imagen id="imagen" alt="User Icon"  width="300" height="300" />
+               
+                      </div>
+                      
+                    </div>
+                </div>
+              </div> 
+                    
+            </td>
+           <td>
+                  <input type="text" id="nombre" #nombre class="fadeIn second" placeholder="Nombre del Servicio">
+                  <input type="text" id="descr" #descr class="fadeIn second"  placeholder="Descripcion">
+                  <select class="custom-select" #oficios (change)="capturar_oficio(oficios.value)" id="inputGroupSelect01">
+                    <option value="-1" selected>Clasificacion</option>
+                    <option value="{{clas.idOficio}}" *ngFor="let clas of clasificacion">{{clas.nombre}}</option>
+                  </select>
+              </td>
+          </tr>
+          <tr>
+            <td>
+               
+              <input type="button" value="Agregar Imagen" (click)="agregar_imagen()"> 
+            </td>
+            <td>
+              <input type="submit" class="fadeIn fourth" (click) = "crear_servicio(nombre.value, descr.value)" value="Crear Servicio" >
+            </td>
+          </tr>  
+          </table>              
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="column">
+        <div class="col-sm">
+            <br>
+            <div class="wrapper fadeInDown">
+                <div style="background-color: rgb(73, 73, 82);" id="formContent">
+                    <br>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm">
+                                <input type="text" #nombre id="nombre" class="fadeIn second" name="login" placeholder="Nombre">
+                            
+                                <br>
+                                <br>
+                            </div>
+                            <div class="col-sm">
+                                <br>
+                                <button class="btn btn-success" (click)="crear_oficio(nombre.value)">Agregar Oficio</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  <!-- Remind Passowrd -->
+                </div>
+              </div>
+            
+            
+           </div>
+          <div class="col-sm">
+              <br>
+              
+            <div  class="fadeIn second">
+                <div class="overflow-auto">
+                    <table  class="table table-striped table-dark">
+                        <thead class="thead-dark" >
+                            <tr align="center">
+                                <td>Nombre</td>
+                                <td>Eliminar</td>
+                                <td>Modificar</td>
+                            </tr>
+                            
+                        </thead>
+                        <tbody>
+                            <tr align="center" *ngFor="let oficio of oficios">
+                                <td>{{oficio.nombre}}</td>
+                                <td><button class="btn btn-danger">Eliminar</button></td> 
+                                <td><button class="btn btn-warning">Modificar</button></td> 
+                             </tr>
+                        </tbody>
+                       </table>
+                  <!-- Remind Passowrd -->
+                </div>
+              </div>
+          </div>
+    </div>
+</div>

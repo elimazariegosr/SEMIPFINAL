@@ -1,0 +1,24 @@
+# Obtener la imagen que necesitamos
+FROM node:14
+
+# Crea la carpeta
+RUN mkdir -p /usr/src/app
+
+# Setea la carpeta por defecto a la creada anteriormente
+WORKDIR /usr/src/app
+
+# Los archivos con nombre package los opia en el wordir
+COPY package*.json ./
+
+# Instala los paquetes de node en el contenedor
+RUN npm install
+
+# Copia los archivos a nivel de dockerfile al workdir
+COPY . .
+
+# Expone el puerto 3000 del contenedor que es el mismo de la api
+EXPOSE 3000
+
+#CMD ["node", "index.js"]
+CMD ["node", "./index.js"]
+#CMD ["npm", "start"]

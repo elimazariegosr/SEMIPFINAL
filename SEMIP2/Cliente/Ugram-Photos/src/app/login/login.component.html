@@ -1,0 +1,49 @@
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img style="max-height: 150px; max-width: 150px;" src="https://ksatravel.net//assets/img/admin.png" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+        <input type="text" #login id="login" class="fadeIn second" name="login" placeholder="Email">
+        <input type="password" #password id="password" class="fadeIn third" name="login" placeholder="password">
+        <p></p>  
+        <input type="submit" class="fadeIn fourth" value="Entrar" (click) = "validar_login(login.value, password.value)">
+      
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <input type="submit" class="fadeIn fourth" value="Entrar por Camara" (click) = "mostrar()">
+      </div>
+    </div>
+  </div>
+
+
+  <div #div_tomar_foto id="div_tomar_foto" style="max-width: 500px;" class="modal fade show" tabindex="-1" style="display: none; " >
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="nombre">Login con imagen</h3>
+          <button type="button" class="close" (click) = "ocultar_divtm()"  onclick="desactivar_cam()"  data-dismiss="modal" aria-hidden="true">×</button>
+        </div>
+            <div class="wrapper fadeInDown">
+                <div class="container" id="div_image"> 
+                    <table align="center"> 
+                      <tr align="center">
+                        <td>
+                          <img src="{{foto_cargada}}" #imagen id="imagen" alt="User Icon"  width="300" height="300" />
+                          <input type="submit" class="fadeIn fourth" value="Cargar fotografia" (click)="agregar_imagen()" >
+                        </td>
+                        <td>  
+                          <input type="text" #logincam id="logincam" class="fadeIn second"  placeholder="User Name">
+                          <input type="submit" class="fadeIn fourth" value="Entrar Por Camara" (click)="tomar_foto(logincam.value)" >  
+                        </td>
+                      </tr>
+                    </table>    
+              </div>
+        </div>
+      </div>
+    </div>
+  </div>

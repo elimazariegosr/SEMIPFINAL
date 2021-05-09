@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ugramphotos-dev-214754-authRole",
+      "UnauthRoleArn": "arn:aws:iam::577816200022:role/amplify-ugramphotos-dev-214754-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::577816200022:role/amplify-ugramphotos-dev-214754-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-ugramphotos-dev-214754-deployment",
+      "UnauthRoleName": "amplify-ugramphotos-dev-214754-unauthRole",
+      "StackName": "amplify-ugramphotos-dev-214754",
+      "StackId": "arn:aws:cloudformation:us-east-1:577816200022:stack/amplify-ugramphotos-dev-214754/e2b63110-91d3-11eb-a5b4-0e709ff1c6b9",
+      "AmplifyAppId": "d18ryw0ikym6qb"
+    }
+  }
+}

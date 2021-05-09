@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table">
+      <tr align="center">
+        <td>
+          <div class="wrapper fadeInDown">
+              <img src="{{foto_cargada}}" #imagen id="imagen" alt="User Icon"  width="300" height="300" />
+          </div> 
+        </td>
+      </tr>
+      <tr align="center">
+        <td>
+          <textarea class="form-control" style="background-color:ghostwhite" id="texto"></textarea>
+        </td>
+      </tr>
+      <tr align="center">
+        <td>
+          <br>
+          <input type="button" value="Cargar Foto" (click) = "agregar_imagen()">    
+          <input type="button" value="Analizar" (click) = "analizar_foto()">    
+        </td>
+      </tr>
+      </table>    
+  </div>
+      
